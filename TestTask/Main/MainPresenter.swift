@@ -14,14 +14,14 @@ protocol MainPresenterProtocol: AnyObject {
 }
 
 class MainPresenter {
-    unowned var view: MainPresenterProtocol!
+    unowned private var view: MainPresenterProtocol!
     
     init(view: MainPresenterProtocol) {
         self.view = view
     }
     
-    var personalModel = Person()
-    var childrenModels = [Person]()
+    private var personalModel = Person()
+    private var childrenModels = [Person]()
     
     func makeItems() {
         var items: [MainTableAdapter.Item] = [
